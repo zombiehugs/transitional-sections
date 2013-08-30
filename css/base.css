@@ -1,0 +1,61 @@
+.transSections
+{
+	font-family: Lato;
+	color: #3A3A3A;
+	overflow: hidden;
+	position: relative;
+}
+.transSections .sectionItem
+{
+	float: left;
+	display: block;
+	font-size: 18px !important;
+	font-family: Lato !important;
+	margin-right: 22px;
+	padding-top: 12px;
+	padding-right: 5px;
+}
+.transSections A
+{
+	text-decoration: none;
+	font-weight: 300;
+	color: #878787;
+}
+.transSections .active
+{
+	font-weight: 400 !important;
+	color: #000000 !important;
+	margin-top: -1px;
+}
+.transSections .error
+{
+	background: url(/i/validation_error_sm.png) no-repeat right top;
+}
+.transSections .sectionContentContainer
+{
+	float: left;
+	clear: left;
+	overflow: hidden;
+	width: 100%;
+}
+.transSections .sectionContentContainer .sectionPanel
+{
+	position: relative;
+	padding: 0;
+	margin: 0;
+}
+.transSections .sectionContentContainer .sectionPanel UL
+{
+	list-style-type: none;
+	float: left;
+	position: relative;
+	padding: 0px 10px 0px 0px !important;
+	margin: 22px 0px 0px !important;
+	left: 100px;
+	opacity: .2;
+	display: none;
+}
+.transSections .sectionContent
+{
+	width: 100%;
+}

@@ -1,0 +1,138 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>transitional-sections demo</title>
+<script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.8.11.min.js"></script>
+<script type="text/javascript" src="js/transitional.sections.js"></script>
+<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+<link href="css/base.css" rel="stylesheet" type="text/css">
+<link href="css/demo.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+body, td, th {
+	font-family: Lato;
+	font-size: 13px;
+	font-weight: 300;
+}
+body {
+	background-image: url(i/noisebg.gif);
+	background-repeat: repeat;
+	line-height: 20px;
+	margin-top: 25px;
+}
+</style>
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+<body>
+<div class="container">
+  <header> <a href="#"><img src="i/header_logo.png" alt="Logo" display: block;" /></a> </header>
+  <article class="content">
+    <h1>transitional-sections</h1>
+    <secti on>
+    <h2>what and why?</h2>
+    <p>I consider this control a tabless, tabbed control. While it maintains the functionality of a tabset it appears and behaves in a slightly more aesthetic way. This control was created out of a requirement for a current project I am working on that needed the functionality of tabs but not the look. I am an avid user of Microsoft's Zune service as well as a Windows Phone and Zune owner. I wanted to replicate the slide-in effect that is prevalent throughout the user interface on these devices.</p>
+    </section>
+    <section>
+      <h2>basic functionality</h2>
+      <div class="transSections"> <a class="sectionItem" id="parent1" href="#item1">Section 1</a> <a class="sectionItem" id="parent2" href="#item2">Section 2</a> <a class="sectionItem" id="parent3" href="#item3">Section 3</a> <a class="sectionItem" id="parent4" href="#item4">Section 4</a>
+        <div class="sectionContentContainer">
+          <div class="sectionPanel">
+            <ul class="sectionContent" id="item1">
+              <li><b style="font-size: 15px">ar·chi·tec·ture</b> <i> /ˈärkiˌtekCHər/ </i><br/>
+                <b style="font-size: 14px">noun</b><br/>
+                <br/>
+                1. the art or practice of designing and constructing buildings.                                               
+                synonyms: building design, building style, planning, building, construction; <i>the style in which a building is designed or constructed, esp. with regard to a specific period, place, or culture. plural noun: architectures
+                "Victorian architecture"</i> <br/>
+                <br/>
+                2. the complex or carefully designed structure of something. "the chemical architecture of the human brain" <i>the conceptual structure and logical organization of a computer or computer-based system."a client/server architecture"</i></li>
+            </ul>
+            <ul class="sectionContent" id="item2">
+              <li> <img src="i/demoimg.jpg"/> </li>
+            </ul>
+            <ul class="sectionContent" id="item3">
+              <li>
+                <form class="topHeavy">
+                  <div class="left fifty">
+                    <label>name</label>
+                    <input type="text">
+                    <label>username</label>
+                    <input type="text">
+                    <label>password</label>
+                    <input type="password">
+                    <label>confirm</label>
+                    <input type="password">
+                    <label>twitter</label>
+                    <input type="text">
+                  </div>
+                  <div class="right">
+                    <label>website</label>
+                    <input type="text">
+                    <label>email</label>
+                    <input type="text">
+                    <label>confirm</label>
+                    <input type="text">
+                  </div>
+                  <div class="topHeavy hundred left clearL">
+                    <input type="button" value="Cancel" class="thirty left clearL regularBtn">
+                    <input type="submit" value="Go" class="seventy left actionBtn">
+                  </div>
+                </form>
+              </li>
+            </ul>
+            <ul class="sectionContent" id="item4">
+              <li>
+              <div class="big">Give it a shot, let me know what you think. Wanna improve it? Make a fork. <b class="pink">;)</b></div></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <script>
+    $(function () {
+        $('.transSections').transSections({   
+            width: "650",
+            height: "375"
+        });
+    });    
+</script>
+      <h2>html source</h2>
+<pre class="prettyprint">&lt;div class=&quot;transSections&quot;&gt;<br/> &lt;a class=&quot;sectionItem&quot; id=&quot;parent1&quot; href=&quot;#item1&quot;&gt;Section 1&lt;/a&gt;<br/> &lt;a class=&quot;sectionItem&quot; id=&quot;parent2&quot; href=&quot;#item2&quot;&gt;Section 2&lt;/a&gt;<br/> &lt;a class=&quot;sectionItem&quot; id=&quot;parent3&quot; href=&quot;#item3&quot;&gt;Section 3&lt;/a&gt;<br/> &lt;a class=&quot;sectionItem&quot; id=&quot;parent4&quot; href=&quot;#item4&quot;&gt;Section 4&lt;/a&gt;<br/>
+ &lt;div class=&quot;sectionContentContainer&quot;&gt;
+    &lt;div class=&quot;sectionPanel&quot;&gt;
+      &lt;ul class=&quot;sectionContent&quot; id=&quot;item1&quot;&gt;
+        &lt;li&gt; &lt!-- Content Here --&gt &lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;ul class=&quot;sectionContent&quot; id=&quot;item2&quot;&gt;
+        &lt;li&gt; &lt!-- Content Here --&gt &lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;ul class=&quot;sectionContent&quot; id=&quot;item3&quot;&gt;
+        &lt;li&gt; &lt!-- Content Here --&gt &lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;ul class=&quot;sectionContent&quot; id=&quot;item4&quot;&gt;
+        &lt;li&gt; &lt!-- Content Here --&gt &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+    $(function () {
+        $('.transSections').transSections({   
+            width: &quot;650&quot;,
+            height: &quot;375&quot;
+        });
+    });
+&lt;/script&gt;
+</pre>
+    </section>
+    <section>
+      <h2>desired future features</h2>
+      <p>I would like to extend the functionality to include AJAX loading of sections as well as allow for different transition directions.</p>
+    </section>
+  </article>
+</div>
+</body>
+</html>
