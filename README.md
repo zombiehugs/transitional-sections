@@ -1,6 +1,8 @@
 transitional-sections
 =====================
 
+###<a href="http://zombiehugs.github.io/transitional-sections/">Demo</a>
+
 Transitional Sections modeled after the Zune interface. Developed as a requirement for a project I am currently working on.
 
 Created: 08/30/13
