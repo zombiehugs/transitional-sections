@@ -16,10 +16,10 @@ Be sure to include jQuery and jQuery UI, it is not currently in pure JavaScript.
 
 ```html
 <div class="transSections">
- <a class="sectionItem" id="parent1" href="#item1">Section 1</a>
- <a class="sectionItem" id="parent2" href="#item2">Section 2</a>
- <a class="sectionItem" id="parent3" href="#item3">Section 3</a>
- <a class="sectionItem" id="parent4" href="#item4">Section 4</a>
+ <a class="sectionItem" href="#item1">Section 1</a>
+ <a class="sectionItem" href="#item2">Section 2</a>
+ <a class="sectionItem" href="#item3">Section 3</a>
+ <a class="sectionItem" href="#item4">Section 4</a>
 
  <div class="sectionContentContainer">
     <div class="sectionPanel">
