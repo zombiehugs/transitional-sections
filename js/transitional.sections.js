@@ -3,8 +3,8 @@
         var settings = {
             width: null,
             height: null,
-            tabItemsClass: '.sectionItem',
-            tabContentClass: '.sectionContent',
+            sectionItemsClass: '.sectionItem',
+            sectionContentClass: '.sectionContent',
             validate: false
         }
 
@@ -12,9 +12,9 @@
         var height = options.height;
         var width = options.width;
         var $selector = $(this).selector;
-        var $tabItemsClass = $(options.tabItemsClass).selector;
-        var $tabContentClass = $(options.tabContentClass).selector;
-        var $initialTab = $($tabItemsClass + ":first");
+        var $sectionItemsClass = $(options.sectionItemsClass).selector;
+        var $sectionContentClass = $(options.sectionContentClass).selector;
+        var $initialTab = $($sectionItemsClass + ":first");
         var $previousTab = $initialTab;
         var isValidated = options.validate;
 
@@ -26,14 +26,14 @@
             $($selector).css({ height: height, width: width });
             $($initialTab).addClass('active');
             $(($initialTab.attr('href'))).show().animate({ left: '0px', opacity: 1 }, 700, "easeOutQuart");
-            $($selector).find($tabItemsClass).each(function (index) {              
+            $($selector).find($sectionItemsClass).each(function (index) {              
                 $(this).bind({
                     click: function (e) {
                         e.preventDefault();
                         if (!$(this).hasClass('active')) {
-                            $($tabItemsClass).removeClass('active');
+                            $($sectionItemsClass).removeClass('active');
                             $(this).addClass('active');
-                            $($tabContentClass).hide().removeAttr('style');
+                            $($sectionContentClass).hide().removeAttr('style');
                             var childContent = $($(this).attr('href'));                 
                             $(childContent).show().animate({ left: '0px', opacity: 1 }, 700, "easeOutQuart");
                             if (isValidated) {
