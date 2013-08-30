@@ -7,22 +7,58 @@ Created: 08/30/13
 
 Author: John Gerdsen
 
-Dependent upon jQuery and jQuery UI, make sure to include.
+##Setup & Usage
+Be sure to include jQuery and jQuery UI, it is not currently in pure JavaScript.
 
-Extendable Settings (Defaults Shown):
+###Basic Structure
 
-        var settings = {
-            width: null,
-            height: null,
-            sectionItemsClass: '.sectionItem',
-            sectionContentClass: '.sectionContent',
-            validate: false
-        }
+```html
+<div class="transSections">
+ <a class="sectionItem" id="parent1" href="#item1">Section 1</a>
+ <a class="sectionItem" id="parent2" href="#item2">Section 2</a>
+ <a class="sectionItem" id="parent3" href="#item3">Section 3</a>
+ <a class="sectionItem" id="parent4" href="#item4">Section 4</a>
 
-sectionItemsClass - class selector of the section headings.
+ <div class="sectionContentContainer">
+    <div class="sectionPanel">
+      <ul class="sectionContent" id="item1">
+        <li> <!-- Content Here --> </li>
+      </ul>
+      <ul class="sectionContent" id="item2">
+        <li> <!-- Content Here --> </li>
+      </ul>
+      <ul class="sectionContent" id="item3">
+        <li> <!-- Content Here --> </li>
+      </ul>
+      <ul class="sectionContent" id="item4">
+        <li> <!-- Content Here --> </li>
+      </ul>
+    </div>
+  </div>
+</div>
+```
+###Javascript call
 
-sectionContentClass - class selector of the section content(s)
+```javascript
+    var settings = {
+        width: 650,
+        height: 350,
+        sectionItemsClass: '.sectionItem',
+        sectionContentClass: '.sectionContent',
+        validate: false
+    }
+        
+    $(function () {
+        $('.transSections').transSections(settings);
+    });
+```
 
-validate - if form fields are present in the section the control will validate their values upon exiting.
+###Extendable Settings:
 
-**currently only supports [data-val='true'] selector used in unobtrusive validation. would liket to extend this to user other forms of validation.
+| Behavior      | Values              | Description                                                                                                        |
+| ------------- | ------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| `sectionItemsClass` | `any selector`   | class selector of the section headings. |
+| `sectionContentClass` | `any selector`   | class selector of the section content(s). |
+| `validate`    | `true` or `false`   | `true` if form fields are present in the section the control will, validate their values upon exiting. **currently only supports [data-val='true'] selector used in unobtrusive validation. would liket to extend this to user other forms of validation. |
+| `height`    | `positive values`   | height of the entire control |
+| `width`     | `positive values` | width of the entire control      |
