@@ -1,0 +1,154 @@
+/*<style type="text/css"> body*/
+#INVALID-RULE
+{
+	font: 12px Verdana, Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+	color: #666;
+}
+UL, OL, DL
+{
+	padding: 0;
+	margin: 0;
+}
+H1, H2, H3, H4, H5, H6, P
+{
+	margin-top: 10px;
+	padding-right: 15px;
+	margin-bottom: 15px;
+	/*[disabled]float:left;*/
+}
+A IMG
+{
+	border: none;
+}
+.container
+{
+	width: 670px;
+	background-color: transparent;
+	margin: 0 auto;
+}
+HEADER
+{
+	margin-bottom: 30px;
+	background-color: transparent;
+}
+.content
+{
+	padding: 10px 0;
+	width: 670px;
+	float: right;
+}
+.content UL, .content OL
+{
+	padding: 0 15px 15px 40px;
+}
+LABEL
+{
+	float: left;
+	clear: left;
+	margin-right: 12px;
+	min-width: 58px;
+	text-align: right;
+}
+INPUT
+{
+	float: left;
+	margin-bottom: 15px;
+	width: 200px;
+}
+FOOTER
+{
+	padding: 10px 0;
+	background-color: #CCCCCC;
+	position: relative;
+	clear: both;
+}
+HEADER, SECTION, FOOTER, ASIDE, ARTICLE, FIGURE
+{
+	display: block;
+}
+/*</style> pre*/
+#INVALID-RULE
+{
+}
+.prettyprint
+{
+	border: 1px solid #D4D4D4 !important;
+	padding: 10px !important;
+	background: #F2F2F2;
+}
+SECTION
+{
+	margin-bottom: 25px;
+	margin-top: 10px;
+	float: left;
+	clear: left;
+}
+H1
+{
+	font-size: 24px;
+	margin-bottom: 40px;
+}
+.regularBtn, .actionBtn
+{
+	height: 32px;
+	border: none;
+}
+.actionBtn
+{
+	background: #F36161;
+	color: #FFF;
+}
+.regularBtn
+{
+	color: #979797;
+	background: #E4E4E4;
+}
+.left
+{
+	float: left;
+}
+.clearL
+{
+	clear: left;
+}
+.right
+{
+	float: right;
+}
+.fifty
+{
+	width: 50%;
+}
+.thirty
+{
+	width: 30%;
+}
+.seventy
+{
+	width: 70%;
+	float: left;
+}
+.hundred
+{
+	width: 100%;
+}
+.topHeavy
+{
+	margin-top: 18px;
+}
+.big
+{
+	font-size: 22px;
+	line-height: 36px;
+}
+.pink
+{
+	color: #F36161;
+}
+.transSections
+{
+	margin-bottom: 50px;
+	margin-top: 32px;
+}
