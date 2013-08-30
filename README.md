@@ -55,12 +55,12 @@ Be sure to include jQuery and jQuery UI, it is not currently in pure JavaScript.
     });
 ```
 
-###Extendable Settings:
+###Extendable Settings
 
 | Behavior      | Values              | Description                                                                                                        |
 | ------------- | ------------------- | ------------------------------------------------------------------------------------------------------------------ |
 | `sectionItemsClass` | `any selector`   | class selector of the section headings. |
 | `sectionContentClass` | `any selector`   | class selector of the section content(s). |
-| `validate`    | `true` or `false`   | `true` if form fields are present in the section the control will, validate their values upon exiting. **currently only supports [data-val='true'] selector used in unobtrusive validation. would liket to extend this to user other forms of validation. |
+| `validate`    | `true` or `false`   | `true` if form fields are present in the section the control will, validate their values upon exiting. **currently only supports [data-val='true'] selector used in unobtrusive validation. would like to extend this to user other forms of validation. |
 | `height`    | `positive values`   | height of the entire control |
 | `width`     | `positive values` | width of the entire control      |
