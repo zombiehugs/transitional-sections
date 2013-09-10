@@ -3,25 +3,20 @@
         var settings = {
             width: null,
             height: null,
-			sectionItemsContainerId: '#sectionItemsContainer',
             sectionItemsClass: '.sectionItem',
             sectionContentClass: '.sectionContent',
-            validate: false,
-			orientation: 'horz'
+            validate: false
         }
 
-		var options = $.extend(settings, options);
+        var options = $.extend(settings, options);
         var height = options.height;
         var width = options.width;
-        var isValidated = options.validate;
-        var orientation = options.orientation;
         var $selector = $(this).selector;
-        var $sectionItemsContainerId = $(options.sectionItemsContainerId).selector;
         var $sectionItemsClass = $(options.sectionItemsClass).selector;
         var $sectionContentClass = $(options.sectionContentClass).selector;
         var $initialTab = $($sectionItemsClass + ":first");
         var $previousTab = $initialTab;
-		
+        var isValidated = options.validate;
 
         $(document).ready(function () {
             init();
@@ -29,10 +24,9 @@
 
         function init() {
             $($selector).css({ height: height, width: width });
-            $($selector).addClass(orientation);
-			$($initialTab).addClass('active');
+            $($initialTab).addClass('active');
             $(($initialTab.attr('href'))).show().animate({ left: '0px', opacity: 1 }, 700, "easeOutQuart");
-            $($selector).find($($sectionItemsContainerId)).children($sectionItemsClass).each(function (index) {              
+            $($selector).find($sectionItemsClass).each(function (index) {              
                 $(this).bind({
                     click: function (e) {
                         e.preventDefault();
