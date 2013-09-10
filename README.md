@@ -16,11 +16,12 @@ Be sure to include jQuery and jQuery UI, it is not currently in pure JavaScript.
 
 ```html
 <div class="transSections">
- <a class="sectionItem" href="#item1">Section 1</a>
- <a class="sectionItem" href="#item2">Section 2</a>
- <a class="sectionItem" href="#item3">Section 3</a>
- <a class="sectionItem" href="#item4">Section 4</a>
-
+ <div id="sectionItemsContainer">
+   <a class="sectionItem" href="#item1">Section 1</a>
+   <a class="sectionItem" href="#item2">Section 2</a>
+   <a class="sectionItem" href="#item3">Section 3</a>
+   <a class="sectionItem" href="#item4">Section 4</a>
+ </div>
  <div class="sectionContentContainer">
     <div class="sectionPanel">
       <ul class="sectionContent" id="item1">
@@ -45,9 +46,11 @@ Be sure to include jQuery and jQuery UI, it is not currently in pure JavaScript.
     var settings = {
         width: 650,
         height: 350,
+        sectionItemsContainerId: '#sectionItemsContainer',
         sectionItemsClass: '.sectionItem',
         sectionContentClass: '.sectionContent',
-        validate: false
+        validate: false,
+        orientation: 'horz'
     }
         
     $(function () {
@@ -64,4 +67,4 @@ Be sure to include jQuery and jQuery UI, it is not currently in pure JavaScript.
 | `validate`    | `true` or `false`   | `true` if form fields are present in the section the control will, validate their values upon exiting. **currently only supports [data-val='true'] selector used in unobtrusive validation. would like to extend this to user other forms of validation. |
 | `height`    | `positive values`   | height of the entire control |
 | `width`     | `positive values` | width of the entire control      |
-| `orientation`     | `vert` `horz` | changes the way the section headings are layed out      |
+| `orientation`     | `vert` or `horz` | changes the way the section headings are layed out      |
