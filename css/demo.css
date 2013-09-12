@@ -55,7 +55,7 @@ INPUT
 {
 	float: left;
 	margin-bottom: 15px;
-	width: 200px;
+	min-width:100px;
 }
 FOOTER
 {
