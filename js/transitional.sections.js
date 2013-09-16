@@ -59,15 +59,16 @@
         };
         function performValidation() {
             var invalid = false;
-            $($($previousTab.attr('href'))).find('[data-val="true"]').each(function (index) {
+            $($previousTab.attr('href')).find('[data-val="true"]').each(function (index) {
                 if (!$previousTab.parents('form').validate().element(this)) {
+                    console.log('error');
                     $previousTab.addClass('error');
                     invalid = true;
                 }
-                else {
-                    $previousTab.removeClass('error');
-                }
             });
+            if (!invalid) {
+                $previousTab.removeClass('error');
+            }
         };
     };
 })(jQuery);
