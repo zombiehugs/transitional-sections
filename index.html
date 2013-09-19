@@ -39,7 +39,7 @@ body {
     <section>
       <h2>basic functionality | <a class="pink" onclick="javascript: $('.transSections').removeClass('vert');">horizontal</a> / <a class="pink" onclick="javascript: $('.transSections').addClass('vert');">vertical</a></h2>
       <div class="transSections" id="demohorz">
-	  <div id="sectionItemsContainer"><a class="sectionItem" id="parent1" href="#item1">Section 1</a> <a class="sectionItem" id="parent2" href="#item2">Section 2</a> <a class="sectionItem" id="parent3" href="#item3">Section 3</a> <a class="sectionItem" id="parent4" href="#item4">Section 4</a></div>
+	  <div class="sectionItemsContainer"><a class="sectionItem" id="parent1" href="#item1">Section 1</a> <a class="sectionItem" id="parent2" href="#item2">Section 2</a> <a class="sectionItem" id="parent3" href="#item3">Section 3</a> <a class="sectionItem" id="parent4" href="#item4">Section 4</a></div>
         <div class="sectionContentContainer">
           <div class="sectionPanel">
             <ul class="sectionContent" id="item1">
@@ -95,7 +95,7 @@ body {
       <script>
 	  
     $(function () {
-        var test = new $('#demohorz').transSections({   
+        $('#demohorz').TransSections({   
             width: "650",
             height: "375"
         });
@@ -103,7 +103,7 @@ body {
 </script>
 
 	  <h2>html source</h2>
-<pre class="prettyprint">&lt;div class=&quot;transSections&quot;&gt;<br/> &lt;div id=&quot;sectionItemsContainer&quot;&gt;<br/>  &lt;a class=&quot;sectionItem&quot; id=&quot;parent1&quot; href=&quot;#item1&quot;&gt;Section 1&lt;/a&gt;<br/>  &lt;a class=&quot;sectionItem&quot; id=&quot;parent2&quot; href=&quot;#item2&quot;&gt;Section 2&lt;/a&gt;<br/>  &lt;a class=&quot;sectionItem&quot; id=&quot;parent3&quot; href=&quot;#item3&quot;&gt;Section 3&lt;/a&gt;<br/>  &lt;a class=&quot;sectionItem&quot; id=&quot;parent4&quot; href=&quot;#item4&quot;&gt;Section 4&lt;/a&gt;<br/> &lt;/div&gt;
+<pre class="prettyprint">&lt;div class=&quot;transSections&quot; id=&quot;demo&quot;&gt;<br/> &lt;div class=&quot;sectionItemsContainer&quot;&gt;<br/>  &lt;a class=&quot;sectionItem&quot; id=&quot;parent1&quot; href=&quot;#item1&quot;&gt;Section 1&lt;/a&gt;<br/>  &lt;a class=&quot;sectionItem&quot; id=&quot;parent2&quot; href=&quot;#item2&quot;&gt;Section 2&lt;/a&gt;<br/>  &lt;a class=&quot;sectionItem&quot; id=&quot;parent3&quot; href=&quot;#item3&quot;&gt;Section 3&lt;/a&gt;<br/>  &lt;a class=&quot;sectionItem&quot; id=&quot;parent4&quot; href=&quot;#item4&quot;&gt;Section 4&lt;/a&gt;<br/> &lt;/div&gt;
  &lt;div class=&quot;sectionContentContainer&quot;&gt;
     &lt;div class=&quot;sectionPanel&quot;&gt;
       &lt;ul class=&quot;sectionContent&quot; id=&quot;item1&quot;&gt;
@@ -123,7 +123,7 @@ body {
 &lt;/div&gt;
 &lt;script&gt;
     $(function () {
-        $('.transSections').transSections({   
+        $('#demohorz').TransSections({   
             width: &quot;650&quot;,
             height: &quot;375&quot;,
             orientation: &quot;horz&quot;

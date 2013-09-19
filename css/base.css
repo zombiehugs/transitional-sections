@@ -10,11 +10,11 @@
    font-weight: 300;
    color: #878787;
 }
-.transSections #sectionItemsContainer
+.transSections .sectionItemsContainer
 {
 	float: left;
 }
-.transSections.vert #sectionItemsContainer
+.transSections.vert .sectionItemsContainer
 {
 	height: 100%;
 	border-right: 1px solid #E2E2E2;
@@ -32,7 +32,7 @@
 	padding-top: 12px;
 	padding-right: 5px;
 }
-.transSections.vert #sectionItemsContainer .sectionItem
+.transSections.vert .sectionItemsContainer .sectionItem
 {
 	clear: left;
 	margin-bottom: 0px;
