@@ -46,7 +46,6 @@ Be sure to include jQuery and jQuery UI, it is not currently in pure JavaScript.
     var settings = {
         width: 650,
         height: 350,
-        sectionItemsContainerId: '#sectionItemsContainer',
         sectionItemsClass: '.sectionItem',
         sectionContentClass: '.sectionContent',
         validate: false,
