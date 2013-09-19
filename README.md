@@ -5,9 +5,6 @@ transitional-sections
 
 Transitional Sections modeled after the transitional interfaces like Modern. Developed as a requirement for a project I am currently working on.
 
-Created: 08/30/13
-
-Author: John Gerdsen
 
 ##Setup & Usage
 Be sure to include jQuery and jQuery UI, it is not currently in pure JavaScript.
