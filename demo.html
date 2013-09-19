@@ -38,7 +38,13 @@ body {
     </section>
     <section>
       <h2>basic functionality</h2>
-      <div class="transSections"> <a class="sectionItem" id="parent1" href="#item1">Section 1</a> <a class="sectionItem" id="parent2" href="#item2">Section 2</a> <a class="sectionItem" id="parent3" href="#item3">Section 3</a> <a class="sectionItem" id="parent4" href="#item4">Section 4</a>
+      <div class="transSections" id="trans1">
+	  <div class="sectionItemsContainer">
+	  <a class="sectionItem" id="parent1" href="#item1">Section 1</a>
+	  <a class="sectionItem" id="parent2" href="#item2">Section 2</a>
+	  <a class="sectionItem" id="parent3" href="#item3">Section 3</a>
+	  <a class="sectionItem" id="parent4" href="#item4">Section 4</a>
+	  </div>
         <div class="sectionContentContainer">
           <div class="sectionPanel">
             <ul class="sectionContent" id="item1">
@@ -93,7 +99,7 @@ body {
       </div>
       <script>
     $(function () {
-        $('.transSections').transSections({   
+        $('#trans1').transSections({   
             width: "650",
             height: "375"
         });
