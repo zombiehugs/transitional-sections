@@ -15,8 +15,8 @@ Be sure to include jQuery and jQuery UI, it is not currently in pure JavaScript.
 ###Basic Structure
 
 ```html
-<div class="transSections">
- <div id="sectionItemsContainer">
+<div class="transSections" id="whateverYouWant">
+ <div class="sectionItemsContainer">
    <a class="sectionItem" href="#item1">Section 1</a>
    <a class="sectionItem" href="#item2">Section 2</a>
    <a class="sectionItem" href="#item3">Section 3</a>
@@ -54,7 +54,7 @@ Be sure to include jQuery and jQuery UI, it is not currently in pure JavaScript.
     }
         
     $(function () {
-        $('.transSections').transSections(settings);
+        $('#whateverYouWant').transSections(settings);
     });
 ```
 
