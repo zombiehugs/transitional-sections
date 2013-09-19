@@ -17,7 +17,11 @@
 .transSections.vert .sectionItemsContainer
 {
 	height: 100%;
+	border-right: 1px solid #E2E2E2;
+	box-shadow: 1px 0px #FFF;
+	margin-right: 24px;
 }
+
 .transSections .sectionItem
 {
 	float: left;
@@ -31,7 +35,10 @@
 .transSections.vert .sectionItemsContainer .sectionItem
 {
 	clear: left;
+	margin-bottom: 0px;
+	margin-right: 4px;
 }
+
 
 .transSections .active {
    font-weight: 400 !important;
