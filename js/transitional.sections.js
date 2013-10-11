@@ -70,6 +70,13 @@
                     invalid = true;
                 }
             });
+			 $(thisObj.$previousTab.attr('href')).find('[required="required"]').each(function (index) {
+                if ($(this).val() == "") {
+                    console.log('error');
+                    thisObj.$previousTab.addClass('error');
+                    invalid = true;
+                }
+            });
             if (!invalid) {
                 thisObj.$previousTab.removeClass('error');
             }
