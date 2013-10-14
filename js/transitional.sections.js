@@ -3,9 +3,11 @@
         var settings = {
             width: null,
             height: null,
-            sectionItemsContainerId: '#sectionItemsContainer',
+            sectionItemsContainerId: '.sectionItemsContainer',
+            sectionContentContainerId: '.sectionContentContainer',
             sectionItemsClass: '.sectionItem',
             sectionContentClass: '.sectionContent',
+			sectionItemsPanel: '.sectionPanel',
             validate: false,
             orientation: 'horz'
         }
@@ -25,13 +27,16 @@
             thisObj.$sectionItemsContainerId = $(options.sectionItemsContainerId).selector;
             thisObj.$sectionItemsClass = $(options.sectionItemsClass).selector;
             thisObj.$sectionContentClass = $(options.sectionContentClass).selector;
+            thisObj.$sectionItemsPanel = $(options.sectionItemsPanel).selector;
             thisObj.$initialTab = thisObj.find(thisObj.$sectionItemsClass + ":first");
             thisObj.$previousTab = thisObj.$initialTab;
             thisObj.$tabCollection = thisObj.children(thisObj.$sectionItemsContainerId).children(thisObj.$sectionItemsClass);
+            //Hacky
+            thisObj.$contentCollection = thisObj.children().children(thisObj.$sectionItemsPanel).children(thisObj.$sectionContentClass);
             applyUI();
         }
-
-        function applyUI(){
+		
+		function applyUI(){
             thisObj.css({ height: thisObj.height, width: thisObj.width });
             thisObj.addClass(thisObj.orientation);
             $(thisObj.$initialTab).addClass('active');
@@ -43,7 +48,7 @@
                         if (!$(this).hasClass('active')) {
                             thisObj.$tabCollection.removeClass('active');
                             $(this).addClass('active');
-                            thisObj.find(thisObj.$sectionContentClass).hide().removeAttr('style');
+							thisObj.$contentCollection.hide().removeAttr('style');
                             var childContent = $($(this).attr('href'));
                             $(childContent).show().animate({ left: '0px', opacity: 1 }, 700, "easeOutQuart");
                             if (thisObj.isValidated) {
