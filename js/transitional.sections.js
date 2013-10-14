@@ -17,7 +17,7 @@
             init();
         });
 
-        function init(){
+		function init(){
             thisObj.height = options.height;
             thisObj.width = options.width;
             thisObj.isValidated = options.validate;
@@ -27,6 +27,7 @@
             thisObj.$sectionContentClass = $(options.sectionContentClass).selector;
             thisObj.$initialTab = thisObj.find(thisObj.$sectionItemsClass + ":first");
             thisObj.$previousTab = thisObj.$initialTab;
+            thisObj.$tabCollection = thisObj.children(thisObj.$sectionItemsContainerId).children(thisObj.$sectionItemsClass);
             applyUI();
         }
 
@@ -35,12 +36,12 @@
             thisObj.addClass(thisObj.orientation);
             $(thisObj.$initialTab).addClass('active');
             $((thisObj.$initialTab.attr('href'))).show().animate({ left: '0px', opacity: 1 }, 700, "easeOutQuart");
-            thisObj.find(thisObj.$sectionItemsClass).each(function (index) {
+            thisObj.$tabCollection.each(function (index) {
                 $(this).bind({
                     click: function (e) {
                         e.preventDefault();
                         if (!$(this).hasClass('active')) {
-                            thisObj.find(thisObj.$sectionItemsClass).removeClass('active');
+                            thisObj.$tabCollection.removeClass('active');
                             $(this).addClass('active');
                             thisObj.find(thisObj.$sectionContentClass).hide().removeAttr('style');
                             var childContent = $($(this).attr('href'));
