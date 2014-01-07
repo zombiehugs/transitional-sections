@@ -38,7 +38,8 @@
 		
 		function applyUI(){
             thisObj.css({ height: thisObj.height, width: thisObj.width });
-            thisObj.addClass(thisObj.orientation);
+            ((thisObj.orientation == 'horz') ? $(thisObj.$sectionItemsPanel).css({ height: (thisObj.height - $(thisObj.$sectionItemsContainerId).height()) }) : $(thisObj.$sectionItemsPanel).css({ height: (thisObj.height)}));
+			thisObj.addClass(thisObj.orientation);
             $(thisObj.$initialTab).addClass('active');
             $((thisObj.$initialTab.attr('href'))).show().animate({ left: '0px', opacity: 1 }, 700, "easeOutQuart");
             thisObj.$tabCollection.each(function (index) {
@@ -69,7 +70,7 @@
 
         function performValidation() {
             var invalid = false;
-            $(thisObj.$previousTab.attr('href')).find('[data-val="true"]').each(function (index) {
+            $(thisObj.$previousTab.attr('href')).find('[data-val="true"]:not(":disabled")').each(function (index) {
                 if (!thisObj.$previousTab.parents('form').validate().element(this)) {
                     console.log('error');
                     thisObj.$previousTab.addClass('error');
