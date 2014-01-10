@@ -7,10 +7,12 @@
             sectionContentContainerId: '.sectionContentContainer',
             sectionItemsClass: '.sectionItem',
             sectionContentClass: '.sectionContent',
-			sectionItemsPanel: '.sectionPanel',
+            sectionItemsPanel: '.sectionPanel',
             validate: false,
-            orientation: 'horz'
-        }
+            orientation: 'horz',
+            formSelector: null,
+            animationSpeed: 700
+        };
 
         var options = $.extend(settings, options);
         var thisObj = this;
@@ -41,7 +43,7 @@
             ((thisObj.orientation == 'horz') ? $(thisObj.$sectionItemsPanel).css({ height: (thisObj.height - $(thisObj.$sectionItemsContainerId).height()) }) : $(thisObj.$sectionItemsPanel).css({ height: (thisObj.height)}));
 			thisObj.addClass(thisObj.orientation);
             $(thisObj.$initialTab).addClass('active');
-            $((thisObj.$initialTab.attr('href'))).show().animate({ left: '0px', opacity: 1 }, 700, "easeOutQuart");
+            $((thisObj.$initialTab.attr('href'))).show().animate({ left: '0px', opacity: 1 }, thisObj.animationSpeed, "easeOutQuart");
             thisObj.$tabCollection.each(function (index) {
                 $(this).bind({
                     click: function (e) {
@@ -66,26 +68,55 @@
                     }
                 });
             });
+			if (options.formSelector !== null) {
+                thisObj.$formSelector = $(options.formSelector);
+                $(document).bind('validationHasErrors', function () {
+                    performValidation(true);
+                });
+            }
         };
 
-        function performValidation() {
+        function performValidation(blanket) {
             var invalid = false;
-            $(thisObj.$previousTab.attr('href')).find('[data-val="true"]:not(":disabled")').each(function (index) {
-                if (!thisObj.$previousTab.parents('form').validate().element(this)) {
-                    console.log('error');
-                    thisObj.$previousTab.addClass('error');
-                    invalid = true;
+            if (!blanket) {
+                //Unobtrusive method
+                $(thisObj.$previousTab.attr('href')).find('[data-val="true"]:not(":disabled")').each(function (index) {
+                    if (!thisObj.$previousTab.parents('form').validate().element(this)) {
+                        console.log('error');
+                        thisObj.$previousTab.addClass('error');
+                        invalid = true;
+                    }
+                });
+                //Inline required
+                $(thisObj.$previousTab.attr('href')).find('[required="required"]:not(":disabled")').each(function (index) {
+                    if ($(this).val() == "") {
+                        console.log('error');
+                        thisObj.$previousTab.addClass('error');
+                        invalid = true;
+                    }
+                });
+                if (!invalid) {
+                    thisObj.$previousTab.removeClass('error');
                 }
-            });
-			 $(thisObj.$previousTab.attr('href')).find('[required="required"]').each(function (index) {
-                if ($(this).val() == "") {
-                    console.log('error');
-                    thisObj.$previousTab.addClass('error');
-                    invalid = true;
-                }
-            });
-            if (!invalid) {
-                thisObj.$previousTab.removeClass('error');
+            }
+            else {
+                //quickie but for toggle reasons I'm abandoning right now, would turn into just as slow once fleshed out
+                //for (var i = 0; i < $.validator.unobtrusive.errorList.length; i++) {
+                //    $(options.sectionItemsClass + "[href = '#" + $($.validator.unobtrusive.errorList[i].element).parents('UL.sectionContent').attr('id') + "']").addClass('error');
+                //}
+                thisObj.$tabCollection.each(function (index) {
+                    var $self = $(this);
+                    $.each($.validator.unobtrusive.errorList, function (index) {
+                        var element = $(this.element);
+                        if ($($self.attr('href')).find(element).length >= 1) {
+                            $self.addClass('error');
+                            invalid = true;
+                        }
+                    });
+                    if (!invalid) {
+                        $self.removeClass('error');
+                    }
+                });
             }
         };
 
