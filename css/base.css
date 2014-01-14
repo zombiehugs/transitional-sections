@@ -13,6 +13,7 @@
 .transSections .sectionItemsContainer
 {
 	float: left;
+	margin-bottom: 14px;
 }
 .transSections.vert .sectionItemsContainer
 {
