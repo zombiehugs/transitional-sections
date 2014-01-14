@@ -1,4 +1,13 @@
 /*<style type="text/css"> body*/
+body, td, th {
+	font-family: Lato;
+	font-size: 13px;
+	font-weight: 300;
+}
+body {
+	line-height: 20px;
+	margin-top: 25px;
+}
 #INVALID-RULE
 {
 	font: 12px Verdana, Arial, Helvetica, sans-serif;
