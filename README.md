@@ -5,7 +5,7 @@ transitional-sections
 
 Transitional Sections modeled after the transitional interfaces like Modern. Developed as a requirement for a project I am currently working on.
 
-![](http://zombiehugs.github.io/transitional-sections/img/transsection.png)
+![](http://zombiehugs.github.io/transitional-sections/img/transection_demo.gif)
 
 ##Setup & Usage
 Be sure to include jQuery and jQuery UI, it is not currently in pure JavaScript.
