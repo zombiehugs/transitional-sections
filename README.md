@@ -46,7 +46,8 @@ Be sure to include jQuery and jQuery UI, it is not currently in pure JavaScript.
         sectionItemsClass: '.sectionItem',
         sectionContentClass: '.sectionContent',
         validate: false,
-        orientation: 'horz'
+        orientation: 'horz',
+		animationSpeed: '700'
     }
         
     $(function () {
@@ -64,3 +65,6 @@ Be sure to include jQuery and jQuery UI, it is not currently in pure JavaScript.
 | `height`    | `positive values`   | height of the entire control |
 | `width`     | `positive values` | width of the entire control      |
 | `orientation`     | `vert` or `horz` | changes the way the section headings are layed out      |
+| `formSelector`     | `any selector`  | selector used to find form and its submit button to attach click handler for validation  |
+| `validationType`     | `unobtrusive` or `null`  | specify which type of validation to perform on the sections
+| `animationSpeed`     | any `int`  | specifies the duration of section transitions
